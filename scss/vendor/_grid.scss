@@ -1,0 +1,156 @@
+@use "sass:math";
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+$container-max-widths: (
+  sm: 520px,
+  md: 700px,
+  lg: 940px,
+  xl: 1120px,
+  xxl: 1300px,
+);
+$grid-columns: 12;
+$grid-gutter: 30px !default;
+
+$gutters: (
+  0: 0,
+  1: 0.25,
+  2: 0.5,
+  3: 1,
+  4: 1.5,
+  5: 3,
+);
+
+.container-fluid {
+  --grid-gutter-x: #{$grid-gutter};
+  --grid-gutter-y: #{$grid-gutter};
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  @extend %gutter-padding;
+}
+
+%gutter-padding {
+  padding-left: calc(var(--grid-gutter-x) * 0.5);
+  padding-right: calc(var(--grid-gutter-x) * 0.5);
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--grid-gutter-y) * 0.5 * -1);
+  margin-left: calc(var(--grid-gutter-x) * 0.5 * -1);
+  margin-right: calc(var(--grid-gutter-x) * 0.5 * -1);
+  > * {
+    margin-top: calc(var(--grid-gutter-x) * 0.5);
+    @extend %gutter-padding;
+  }
+}
+
+.container {
+  @extend .container-fluid;
+}
+.col {
+  flex: 1 0;
+}
+
+@mixin createMediaQuery($key, $breakpoint) {
+  @if $key != "xs" {
+    @media (min-width: #{$breakpoint}) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin createCol($key) {
+  @for $i from 1 through 12 {
+    @if ($key != "xs") {
+      .col-#{$key}-#{$i} {
+        flex: 0 0 auto;
+        width: calc(math.div(100%, $grid-columns) * $i);
+      }
+    } @else {
+      .col-#{$i} {
+        flex: 0 0 auto;
+        width: calc(math.div(100%, $grid-columns) * $i);
+      }
+    }
+  }
+}
+
+@mixin createOffset($key) {
+  @for $i from 1 to 12 {
+    @if ($key != "xs") {
+      .offset-#{$key}-#{$i} {
+        margin-left: calc(math.div(100%, $grid-columns) * $i);
+      }
+    } @else {
+      .offset-#{$i} {
+        margin-left: calc(math.div(100%, $grid-columns) * $i);
+      }
+    }
+  }
+}
+@mixin createRowCols($key) {
+  @for $i from 1 through 12 {
+    @if ($key != "xs") {
+      .row-cols-#{$key}-#{$i} > * {
+        flex: 0 0 auto;
+        width: calc(math.div(100%, $i));
+      }
+    } @else {
+      .row-cols-#{$i} > * {
+        flex: 0 0 auto;
+        width: calc(math.div(100%, $i));
+      }
+    }
+  }
+}
+
+@mixin createGutter($key) {
+  @each $i, $ratio in $gutters {
+    @if $key != "xs" {
+      .g-#{$key}-#{$i} {
+        --grid-gutter-x: #{$grid-gutter * $ratio};
+        --grid-gutter-y: #{$grid-gutter * $ratio};
+      }
+      .gx-#{$key}-#{$i} {
+        --grid-gutter-x: #{$grid-gutter * $ratio};
+      }
+      .gy-#{$key}-#{$i} {
+        --grid-gutter-y: #{$grid-gutter * $ratio};
+      }
+    } @else {
+      .g-#{$i} {
+        --grid-gutter-x: #{$grid-gutter * $ratio};
+        --grid-gutter-y: #{$grid-gutter * $ratio};
+      }
+      .gx-#{$i} {
+        --grid-gutter-x: #{$grid-gutter * $ratio};
+      }
+      .gy-#{$i} {
+        --grid-gutter-y: #{$grid-gutter * $ratio};
+      }
+    }
+  }
+}
+
+@each $key, $breakpoint in $grid-breakpoints {
+  $max-width: map-get($container-max-widths, $key);
+  @include createMediaQuery($key, $breakpoint) {
+    .container {
+      max-width: #{$max-width};
+    }
+    @include createCol($key);
+    @include createRowCols($key);
+    @include createOffset($key);
+    @include createGutter($key);
+  }
+}

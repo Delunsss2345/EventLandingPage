@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+html {
+  background: #1d1d1d;
+  font-size: 62.5%;
+}
+%headingH2 {
+  /* Heading/H2 */
+  font-family: var(--ManropeFont);
+  font-size: 7.2rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 76px; /* 105.556% */
+  text-transform: capitalize;
+}
+%desc16 {
+  font-family: var(--ManropeFont);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px; /* 162.5% */
+}
+%headingH4 {
+  /* Heading/H4 */
+  font-family: var(--ManropeFont);
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 100% */
+}
+%bold18 {
+  font-family: var(--ManropeFont);
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 100% */
+}
+%decs14 {
+  font-family: var(--ManropeFont);
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 171.429% */
+}
+%desc16medium {
+  font-family: var(--ManropeFont);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 100% */
+}
+%headingH3 {
+  font-family: var(--ManropeFont);
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 100% */
+  text-transform: capitalize;
+}

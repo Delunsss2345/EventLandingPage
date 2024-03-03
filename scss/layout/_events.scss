@@ -1,0 +1,94 @@
+@use "../base";
+.Events {
+  display: flex;
+  padding-bottom: 150px;
+  align-items: center;
+  column-gap: 100px;
+}
+.Events--left {
+  display: flex;
+  flex-direction: column;
+  &_title {
+    width: 456px;
+    margin-bottom: 38px;
+    color: var(--White, #fff);
+    @extend %headingH2;
+  }
+  &_figcation {
+    margin-bottom: 32px;
+    color: var(--White, #fff);
+    font-family: var(--ManropeFont);
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 100% */
+  }
+  &_descFirst {
+    width: 498px;
+    margin-bottom: 16px;
+    color: var(--P1, #bfbfbf);
+
+    /* 16/16-26 */
+    @extend %desc16 ; 
+  }
+  &_descSecond {
+    width: 499px;
+    color: var(--P1, #bfbfbf);
+
+    /* 16/16-26 */
+    @extend %desc16 ; 
+  }
+}
+.Events--right {
+  position: relative;
+  &_Img {
+    width: 570px;
+    height: 505px;
+    flex-shrink: 0;
+    border-radius: 18px;
+    background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+    }
+  }
+}
+.Events--right_extra {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 350px;
+  height: 91px;
+  flex-shrink: 0;
+  border-radius: 0px 0px 0px 18px;
+  background: var(--Black-1, rgb(29, 29, 29, 0.45));
+  backdrop-filter: blur(2px);
+  .Events--right_extraItem {
+    display: flex;
+    row-gap: 8px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.Events--right_extraTop {
+  color: var(--White, #fff);
+  text-align: center;
+  font-family: var(--ManropeFont);
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 100% */
+}
+.Events--right_extraBottom {
+  color: var(--White, rgb(255, 255, 255, 0.45));
+  font-family: var(--ManropeFont);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 100% */
+}

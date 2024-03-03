@@ -1,0 +1,35 @@
+.headerMain {
+  padding-top: 31px;
+  padding-bottom: 24px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__navigation {
+  .header__navigation-list {
+    display: flex;
+    column-gap: 35px;
+  }
+}
+.header__navigation-listItem {
+  .header__navigation-link {
+    color: var(--P1, #bfbfbf);
+    text-align: center;
+    /* 16/16-medium */
+    font-family: var(--ManropeFont);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px; /* 100% */
+    transition: color 0.2s;
+    &:hover {
+      color: var(--White, #fff);
+    }
+  }
+}
+.header__actionHeader-btn {
+  padding: 16px 30px;
+  background-color: var(--BgrBtnPrimary);
+}
