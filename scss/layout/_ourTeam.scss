@@ -1,4 +1,7 @@
 @use "../base";
+.ourTeam {
+  padding-bottom: 150px;
+}
 .ourTeam__Intro {
   margin-bottom: 56px;
 }
@@ -23,7 +26,6 @@
 .ourTeam__ListMember {
   display: flex;
   justify-content: space-between;
-  padding: 0 18.25px;
 }
 .ourTeam__ListMember-member {
   position: relative;

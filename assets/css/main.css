@@ -72,7 +72,7 @@ html {
   font-size: 62.5%;
 }
 
-.ourTeam__title, .Events--left_title {
+.schedule_left-title, .ourTeam__title, .Events--left_title {
   /* Heading/H2 */
   font-family: var(--ManropeFont);
   font-size: 7.2rem;
@@ -82,7 +82,7 @@ html {
   text-transform: capitalize;
 }
 
-.ourTeam__desc, .Events--left_descFirst, .Events--left_descSecond {
+.schedule_left-desc, .schedule_right-wt, .ourTeam__desc, .Events--left_descFirst, .Events--left_descSecond {
   font-family: var(--ManropeFont);
   font-size: 1.6rem;
   font-style: normal;
@@ -90,13 +90,21 @@ html {
   line-height: 26px; /* 162.5% */
 }
 
-.ourTeam__ListMember-title {
+.schedule_right-wt strong, .ourTeam__ListMember-title {
   /* Heading/H4 */
   font-family: var(--ManropeFont);
   font-size: 2.8rem;
   font-style: normal;
   font-weight: 700;
   line-height: 28px; /* 100% */
+}
+
+.schedule_right-navHeading {
+  font-family: var(--ManropeFont);
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 100% */
 }
 
 .container-fluid, .container {
@@ -1643,6 +1651,10 @@ html {
   line-height: 16px; /* 100% */
 }
 
+.ourTeam {
+  padding-bottom: 150px;
+}
+
 .ourTeam__Intro {
   margin-bottom: 56px;
 }
@@ -1667,7 +1679,6 @@ html {
 .ourTeam__ListMember {
   display: flex;
   justify-content: space-between;
-  padding: 0 18.25px;
 }
 
 .ourTeam__ListMember-member {
@@ -1771,6 +1782,66 @@ html {
   font-style: normal;
   font-weight: 400;
   line-height: 26px; /* 162.5% */
+}
+
+.schedule_left-title {
+  margin-bottom: 20px;
+  color: var(--White, #fff);
+}
+.schedule_left-desc {
+  width: 284px;
+  margin-bottom: 34px;
+  color: var(--P1, #bfbfbf);
+}
+.schedule_left-btn {
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.schedule_right-nav {
+  position: relative;
+  display: flex;
+  column-gap: 60px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.schedule_right-nav .schedule_right-navItem.sc:hover ~ .schedule_right-slide {
+  transform: translateX(100%);
+}
+.schedule_right-nav .schedule_right-navItem.tr:hover ~ .schedule_right-slide {
+  transform: translateX(200%);
+}
+.schedule_right-nav::before {
+  position: absolute;
+  bottom: -20px;
+  content: "";
+  width: 85%;
+  height: 3px;
+  opacity: 0.3;
+  border-radius: 2px;
+  background: #fff;
+}
+.schedule_right-nav .schedule_right-slide {
+  position: absolute;
+  bottom: -20px;
+  width: 194px;
+  height: 5px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s;
+}
+
+.schedule_right-navHeading {
+  margin-bottom: 22px;
+  color: #bfbfbf;
+}
+
+.schedule_right-wt {
+  color: #bfbfbf;
+}
+.schedule_right-wt strong {
+  margin-right: 2px;
+  color: #bfbfbf;
 }
 
 /*# sourceMappingURL=main.css.map */

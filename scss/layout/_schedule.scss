@@ -1,0 +1,75 @@
+@use "../base";
+.schedule_left {
+  &-title {
+    margin-bottom: 20px;
+    color: var(--White, #fff);
+    @extend %headingH2;
+  }
+  &-desc {
+    width: 284px;
+    margin-bottom: 34px;
+    color: var(--P1, #bfbfbf);
+    @extend %desc16;
+  }
+  &-btn {
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+.schedule_right-nav {
+  position: relative;
+  display: flex;
+  column-gap: 60px;
+  width: 100%;
+  margin-bottom: 20px;
+  .schedule_right-navItem {
+    &.sc {
+      &:hover ~ {
+        .schedule_right-slide {
+          transform: translateX(100%);
+        }
+      }
+    }
+    &.tr {
+      &:hover ~ {
+        .schedule_right-slide {
+          transform: translateX(200%);
+        }
+      }
+    }
+  }
+  &::before {
+    position: absolute;
+    bottom: -20px;
+    content: "";
+    width: 85%;
+    height: 3px;
+    opacity: 0.3;
+    border-radius: 2px;
+    background: #fff;
+  }
+  .schedule_right-slide {
+    position: absolute;
+    bottom: -20px;
+    width: 194px;
+    height: 5px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s;
+  }
+}
+.schedule_right-navHeading {
+  margin-bottom: 22px;
+  color: #bfbfbf;
+
+  @extend %bold18;
+}
+.schedule_right-wt {
+  strong {
+    margin-right: 2px;
+    color: #bfbfbf;
+    @extend %headingH4;
+  }
+  color: #bfbfbf;
+  @extend %desc16;
+}
