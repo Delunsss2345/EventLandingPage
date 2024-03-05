@@ -25,6 +25,14 @@ html {
   line-height: 76px; /* 105.556% */
   text-transform: capitalize;
 }
+%headingH3 {
+  font-family: var(--ManropeFont);  
+  font-size: 3.6rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px; /* 100% */
+  text-transform: capitalize;
+}
 %desc16 {
   font-family: var(--ManropeFont);
   font-size: 1.6rem;

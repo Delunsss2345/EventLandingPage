@@ -1,0 +1,128 @@
+@use "../base";
+.pricing {
+  padding-bottom: 150px;
+}
+.pricing_title {
+  width: 517px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 82px;
+  color: var(--White, #fff);
+  @extend %headingH2;
+}
+
+%descCard {
+  color: var(--P2, #e5e5e5);
+  font-family: var(--ManropeFont);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 100% */
+}
+.pricing_car {
+  cursor: pointer;
+  transition: transform 0.4s;
+  &:hover {
+    transform: translateY(-15px);
+  }
+}
+.pricing_car-header {
+  padding: 26px 38px;
+  border-radius: 18px 18px 0px 0px;
+  border-top: 1px solid var(--Black-3, #383838);
+  border-right: 1px solid var(--Black-3, #383838);
+  border-left: 1px solid var(--Black-3, #383838);
+  background: var(--Black-1, #1d1d1d);
+  &.red {
+    background: #f36b7f;
+  }
+  &.green {
+    background: #70d18c;
+  }
+}
+.pricing_car-headerHeading {
+  margin-bottom: 7px;
+  color: var(--White, #fff);
+  @extend %headingH3;
+}
+.pricing_car-headerDesc {
+  color: var(--White, #fff);
+  opacity: 0.8;
+  @extend %desc16;
+}
+.pricing_car-content {
+  border-radius: 0px 0px 18px 18px;
+  border-bottom: 1px solid var(--Black-3, #383838);
+  border-right: 1px solid var(--Black-3, #383838);
+  border-left: 1px solid var(--Black-3, #383838);
+
+  background: var(--Black-2, #272727);
+  padding-top: 74px;
+  padding-left: 38px;
+  padding-bottom: 37px;
+}
+.pricing_car-listContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 22px;
+  margin-bottom: 73px;
+}
+.pricing_car-item {
+  display: flex;
+  align-items: center;
+  column-gap: 18px;
+}
+.pricing_car-desc {
+  @extend %descCard;
+}
+
+.pricing_car-btn {
+  display: flex;
+  border-radius: 54px;
+  border: 1px solid var(--Black-3, #383838);
+  background: var(--Black-1, #1d1d1d);
+  column-gap: 100px;
+  align-items: center;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: background 0.4s;
+  &:hover {
+    background: #5162fe;
+  }
+  span {
+    color: var(--White, #fff);
+
+    /* Button/Button 1-semibold */
+    font-family: var(--ManropeFont);
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16px; /* 100% */
+    text-transform: uppercase;
+  }
+  figure {
+    transform: translateY(10%);
+  }
+}
+
+.pricing_car-content {
+  .pricing_car-listContent {
+    .pricing_car-item {
+      color: #fff;
+    }
+  }
+  &.red {
+    .pricing_car-listContent {
+      .pricing_car-item {
+        color: #f36b7f;
+      }
+    }
+  }
+  &.green {
+    .pricing_car-listContent {
+      .pricing_car-item {
+        color: #70d18c;
+      }
+    }
+  }
+}
