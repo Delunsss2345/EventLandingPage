@@ -16,12 +16,14 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <!-- Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Header -->
     <div class="headerMain">
       <div class="container">
-        <header class="header">
+        <header data-aos-duration="1000" data-aos="fade-down" class="header">
           <!-- Logo Header -->
           <figure class="header__logo">
             <img src="./assets/img/Logo.svg" alt="Floko Logo" />
@@ -63,14 +65,18 @@
       <div class="container">
         <div class="hero">
           <!-- Hero Info -->
-          <div class="hero__info">
+          <div data-aos="fade-down" data-aos-duration="1000" class="hero__info">
             <p class="hero__info-desc">
               OCTOBER 18-22, 2021 / REMOTE DESIGN WEEK
             </p>
             <h1 class="hero__info-title">Our Design Event is coming up!</h1>
           </div>
           <!-- Hero Action -->
-          <div class="hero__actionGroup">
+          <div
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            class="hero__actionGroup"
+          >
             <button class="hero__actionGroup-left btnPrimary">
               <span>BOOK A SEAT</span>
             </button>
@@ -79,7 +85,11 @@
             </button>
           </div>
           <!-- Hero List Creation -->
-          <div class="hero__list row row-cols-xl-3 gy-xl-0">
+          <div
+            data-aos="fade-down"
+            data-aos-duration="1000"
+            class="hero__list row row-cols-xl-3 gy-xl-0"
+          >
             <div class="col">
               <div class="hero__listItem alp">
                 <figure class="hero__listItem-img">
@@ -126,7 +136,11 @@
         </div>
         <!-- Events -->
         <div class="Events">
-          <div class="Events--left">
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            class="Events--left"
+          >
             <h2 class="Events--left_title">Events You'll Remember</h2>
             <p class="Events--left_figcation">
               We are a turnkey event agency in New York.
@@ -143,7 +157,11 @@
               stellar results.
             </p>
           </div>
-          <div class="Events--right">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            class="Events--right"
+          >
             <figure class="Events--right_Img">
               <img
                 src="./assets/img/Events--Img_right.jpg"
@@ -171,7 +189,7 @@
           </div>
         </div>
         <!-- Our Team -->
-        <div class="ourTeam">
+        <div data-aos-duration="1000" data-aos="fade-down" class="ourTeam">
           <!-- OurTeam Intro -->
           <div class="ourTeam__Intro">
             <h2 class="ourTeam__title">Meet the talented Speakers</h2>
@@ -229,7 +247,11 @@
         </div>
         <!-- Schedule -->
         <div class="row schedule">
-          <div class="col-xl-4 schedule_left">
+          <div
+            data-aos-duration="1000"
+            data-aos="fade-right"
+            class="col-xl-4 schedule_left"
+          >
             <h2 class="schedule_left-title">Schedule</h2>
             <p class="schedule_left-desc">
               A representation of the event planning of the Design Conference
@@ -238,7 +260,11 @@
               <span>Download Schedule</span>
             </div>
           </div>
-          <div class="col-xl-7 offset-lg-1 schedule_right">
+          <div
+            data-aos-duration="1000"
+            data-aos="fade-left"
+            class="col-xl-7 offset-lg-1 schedule_right"
+          >
             <div class="schedule_right-nav">
               <div id="fs" class="schedule_right-navItem eventWhite">
                 <p class="schedule_right-navHeading">Day One</p>
@@ -444,7 +470,7 @@
           </div>
         </div>
         <!-- Pricing Plan-uihut -->
-        <div class="pricing">
+        <div data-aos-duration="1000" data-aos="fade-down" class="pricing">
           <h2 class="pricing_title">Pricing Tickets</h2>
           <div class="row g-xl-3 row-cols-xl-3 pricing_list-card">
             <div class="pricing_car">
@@ -915,7 +941,7 @@
           </div>
         </div>
         <!-- BG -->
-        <div class="bg">
+        <div data-aos-duration="1000" data-aos="fade-down" class="bg">
           <div class="bg__list">
             <figure id="bg__list-btnR" class="bg__listBG-action">
               <svg
@@ -1038,7 +1064,7 @@
     </main>
 
     <!-- Footer -->
-    <div class="container">
+    <div data-aos-duration="1000" data-aos="fade-up" class="container">
       <footer class="footer">
         <!-- Logo -->
         <figure class="footer__logo">
@@ -1155,5 +1181,9 @@
       </div>
     </div>
   </body>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="./js.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </html>
