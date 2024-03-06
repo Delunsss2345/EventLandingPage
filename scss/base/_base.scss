@@ -26,7 +26,7 @@ html {
   text-transform: capitalize;
 }
 %headingH3 {
-  font-family: var(--ManropeFont);  
+  font-family: var(--ManropeFont);
   font-size: 3.6rem;
   font-style: normal;
   font-weight: 700;
@@ -76,4 +76,11 @@ html {
   font-weight: 700;
   line-height: 36px; /* 100% */
   text-transform: capitalize;
+}
+%desc16Regular {
+  font-family: var(--ManropeFont);
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 100% */
 }
